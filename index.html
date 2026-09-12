@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wellnessamore Spa | Masajes, Estética y Experiencias</title>
+<meta name="description" content="Wellnessamore Spa en Av. Nueva Providencia 2155, Edificio Panorámico, Metro Los Leones. Masajes, limpiezas faciales y experiencias de bienestar. Reserva por WhatsApp.">
+<meta name="theme-color" content="#0d0b0a">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&family=Great+Vibes&display=swap');
+
+:root{
+  --black:#0c0a09;
+  --black2:#171311;
+  --brown:#2c1d18;
+  --cream:#f6f0e6;
+  --cream2:#ebe0cf;
+  --gold:#c9a33a;
+  --gold2:#f0d27b;
+  --gold3:#9d7620;
+  --white:#fff;
+  --text:#29201c;
+  --muted:#756861;
+  --line:rgba(201,163,58,.35);
+  --shadow:0 24px 70px rgba(0,0,0,.14);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--cream);color:var(--text);font-family:Montserrat,Arial,sans-serif}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+button{font:inherit}
+.container{width:min(1180px,calc(100% - 40px));margin:auto}
+.serif{font-family:"Cormorant Garamond",Georgia,serif}
+.script{font-family:"Great Vibes",cursive}
+.label{text-transform:uppercase;letter-spacing:.25em;font-size:11px;font-weight:700;color:var(--gold2)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:14px 23px;border-radius:999px;border:1px solid transparent;font-size:11px;font-weight:700;letter-spacing:.12em;transition:.25s;cursor:pointer}
+.btn:hover{transform:translateY(-2px)}
+.btn-gold{background:linear-gradient(135deg,var(--gold3),var(--gold2),var(--gold3));color:#17100c;box-shadow:0 10px 28px rgba(201,163,58,.2)}
+.btn-dark{background:var(--brown);color:#fff}
+.btn-light{background:#fff;color:var(--brown)}
+.btn-outline{border-color:rgba(255,255,255,.5);color:#fff}
+.btn-outline:hover{background:#fff;color:var(--brown)}
+.btn-small{padding:11px 17px;font-size:10px}
+
+/* HEADER */
+header{position:fixed;z-index:100;top:0;left:0;right:0;color:#fff;transition:.3s}
+header.scrolled{background:rgba(12,10,9,.94);backdrop-filter:blur(14px);box-shadow:0 10px 30px rgba(0,0,0,.18)}
+.nav{height:78px;display:flex;align-items:center;justify-content:space-between}
+.brand{display:flex;flex-direction:column;line-height:.8}
+.brand-main{font-family:"Cormorant Garamond",serif;font-size:34px;font-weight:500;letter-spacing:.02em}
+.brand-sub{font-size:8px;letter-spacing:.45em;text-transform:uppercase;margin-left:3px;margin-top:8px;opacity:.8}
+nav{display:flex;align-items:center;gap:28px;font-size:12px}
+nav a{opacity:.86;transition:.2s}
+nav a:hover{opacity:1;color:var(--gold2)}
+.menu{display:none;background:none;border:0;color:#fff;font-size:28px;cursor:pointer}
+.mobile-nav{display:none}
+
+/* HERO */
+.hero{min-height:780px;position:relative;overflow:hidden;background:
+linear-gradient(90deg,rgba(10,8,7,.88) 0%,rgba(10,8,7,.68) 48%,rgba(10,8,7,.32) 100%),
+url("assets/nuevas/portada_wellnessamore.jpg") center/cover no-repeat;
+display:flex;align-items:center}
+.hero:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 78% 30%,rgba(240,210,123,.18),transparent 30%),linear-gradient(135deg,transparent 40%,rgba(201,163,58,.09))}
+.hero-inner{position:relative;z-index:1;padding-top:80px}
+.hero-copy{max-width:700px;color:#fff}
+.hero h1{font-size:clamp(58px,8vw,104px);line-height:.82;font-weight:500;margin:18px 0 25px}
+.hero h1 span{color:var(--gold2)}
+.hero p{font-size:17px;line-height:1.8;color:rgba(255,255,255,.76);max-width:650px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px}
+.hero-note{margin-top:18px;color:rgba(255,255,255,.45);font-size:11px}
+
+/* SECTION */
+section{padding:100px 0}
+.section-head{max-width:720px;margin-bottom:48px}
+.section-head.center{text-align:center;margin-left:auto;margin-right:auto}
+.section-head h2{font-size:clamp(45px,6vw,72px);line-height:.9;font-weight:500;margin:12px 0 20px}
+.section-head p{color:var(--muted);line-height:1.8;font-size:15px}
+.dark-section{background:var(--black2);color:#fff}
+.dark-section .section-head p{color:rgba(255,255,255,.62)}
+.gold-text{color:var(--gold2)}
+
+/* NEEDS */
+.needs{background:#fff}
+.needs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.need{border:1px solid rgba(44,29,24,.1);background:#fff;border-radius:25px;padding:28px;transition:.25s}
+.need:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+.need-icon{font-size:28px;color:var(--gold);margin-bottom:18px}
+.need h3{font-family:"Cormorant Garamond",serif;font-size:30px;font-weight:600;margin:0 0 8px}
+.need p{font-size:13px;color:var(--muted);line-height:1.7;margin:0 0 18px}
+.need-link{font-size:10px;font-weight:700;letter-spacing:.13em;color:var(--gold3)}
+
+/* INTRO */
+.intro{text-align:center;background:var(--cream)}
+.intro .big{font-size:clamp(42px,6vw,76px);line-height:.95;max-width:900px;margin:0 auto;font-weight:500}
+.intro p{max-width:700px;margin:28px auto 0;color:var(--muted);line-height:1.9}
+
+/* EXPERIENCE */
+.experience-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.exp-card{min-height:510px;border-radius:30px;overflow:hidden;position:relative;background:#211814}
+.exp-card img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;opacity:.82;transition:.5s}
+.exp-card:hover img{transform:scale(1.04)}
+.exp-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.05) 20%,rgba(0,0,0,.9) 100%)}
+.exp-content{position:absolute;bottom:0;left:0;right:0;padding:34px;color:#fff}
+.exp-content h3{font-size:44px;line-height:.95;margin:9px 0 0;font-weight:500}
+.exp-content p{font-size:13px;line-height:1.7;color:rgba(255,255,255,.78);max-width:520px}
+.price-pills{display:flex;gap:8px;flex-wrap:wrap;margin:20px 0}
+.price-pill{border:1px solid rgba(240,210,123,.45);border-radius:12px;padding:8px 11px;background:rgba(0,0,0,.28);font-size:11px}
+.price-pill strong{color:var(--gold2);font-size:15px}
+
+/* FILTERS */
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px}
+.filter{border:1px solid rgba(44,29,24,.18);background:#fff;color:var(--brown);padding:10px 15px;border-radius:999px;font-size:10px;font-weight:700;letter-spacing:.08em;cursor:pointer}
+.filter.active,.filter:hover{background:var(--brown);color:#fff}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.service{background:#fff;border-radius:25px;overflow:hidden;border:1px solid rgba(44,29,24,.08);box-shadow:0 8px 35px rgba(44,29,24,.05);display:flex;flex-direction:column}
+.service-image{height:215px;overflow:hidden;background:#ddd}
+.service-image img{width:100%;height:100%;object-fit:cover;transition:.4s}
+.service:hover .service-image img{transform:scale(1.04)}
+.service-body{padding:24px;display:flex;flex-direction:column;flex:1}
+.service-tag{font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold3);font-weight:700}
+.service h3{font-family:"Cormorant Garamond",serif;font-size:32px;line-height:.95;margin:9px 0}
+.service .duration{font-size:11px;font-weight:700;color:var(--brown);margin:4px 0 12px}
+.service p{font-size:12px;line-height:1.65;color:var(--muted);margin:0}
+.includes{margin:15px 0;padding-top:14px;border-top:1px solid rgba(44,29,24,.09);font-size:11px;line-height:1.6;color:var(--muted)}
+.includes strong{color:var(--text)}
+.prices{margin-top:auto;padding-top:16px;display:flex;gap:8px}
+.price{flex:1;border-radius:14px;background:var(--cream);padding:12px;text-align:center}
+.price span{display:block;font-size:9px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+.price b{display:block;font-family:"Cormorant Garamond",serif;font-size:27px;margin-top:2px}
+.service .btn{width:100%;margin-top:15px}
+
+/* PAIR */
+.pair{background:var(--brown);color:#fff}
+.pair-layout{display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:center}
+.pair h2{font-size:clamp(55px,7vw,88px);line-height:.85;font-weight:500;margin:16px 0 24px}
+.pair p{color:rgba(255,255,255,.68);line-height:1.8;max-width:600px}
+.pair-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.pair-box{padding:28px;border-radius:22px;background:rgba(255,255,255,.05);border:1px solid rgba(240,210,123,.15);min-height:145px}
+.pair-box span{color:var(--gold2);font-size:22px}
+.pair-box h3{font-family:"Cormorant Garamond",serif;font-size:28px;margin:15px 0 0}
+
+/* DIFFERENTIALS */
+.diff{background:#fff}
+.diff-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.diff-card{text-align:center;padding:25px}
+.diff-num{font-family:"Cormorant Garamond",serif;font-size:54px;color:var(--gold)}
+.diff-card h3{font-family:"Cormorant Garamond",serif;font-size:29px;margin:5px 0}
+.diff-card p{font-size:12px;color:var(--muted);line-height:1.7}
+
+/* GIFT */
+.gift{text-align:center;background:var(--cream)}
+.gift h2{font-size:clamp(50px,7vw,86px);line-height:.88;font-weight:500;margin:15px auto}
+.gift p{max-width:650px;margin:25px auto;color:var(--muted);line-height:1.8}
+.occasions{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin:28px 0}
+
+/* PROCESS */
+.process{background:#fff}
+.process-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.steps{display:flex;flex-direction:column;gap:28px}
+.step{display:flex;gap:20px}
+.step-number{font-family:"Cormorant Garamond",serif;color:var(--gold);font-size:40px;line-height:1}
+.step h3{font-family:"Cormorant Garamond",serif;font-size:30px;margin:0}
+.step p{color:var(--muted);font-size:12px;line-height:1.7;margin:5px 0 0}
+
+/* TESTIMONIALS */
+.testimonials{background:var(--cream)}
+.test-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.test{background:#fff;border-radius:24px;padding:28px}
+.stars{color:var(--gold);letter-spacing:.15em}
+.test blockquote{font-family:"Cormorant Garamond",serif;font-size:25px;line-height:1.25;margin:20px 0}
+.test small{color:var(--muted)}
+
+/* GALLERY */
+.gallery{background:#fff}
+.gallery-grid{display:grid;grid-template-columns:1.1fr .9fr .9fr;grid-auto-rows:230px;gap:12px}
+.gallery-grid img{width:100%;height:100%;object-fit:cover;border-radius:22px}
+.gallery-grid .tall{grid-row:span 2}
+.gallery-grid .wide{grid-column:span 2}
+
+/* FAQ */
+.faq{background:var(--cream)}
+.faq-list{max-width:850px;margin:auto}
+.faq-item{background:#fff;border-radius:18px;margin-bottom:8px;overflow:hidden}
+.faq-button{width:100%;padding:22px;border:0;background:none;display:flex;justify-content:space-between;align-items:center;text-align:left;cursor:pointer;color:var(--text)}
+.faq-question{font-family:"Cormorant Garamond",serif;font-size:25px}
+.faq-icon{font-size:24px;color:var(--gold)}
+.faq-answer{display:none;padding:0 22px 22px;color:var(--muted);font-size:12px;line-height:1.8}
+.faq-item.active .faq-answer{display:block}
+
+/* CTA */
+.final{background:var(--black);color:#fff;text-align:center;padding:125px 0}
+.final h2{font-size:clamp(58px,8vw,105px);line-height:.82;font-weight:500;margin:18px 0}
+.final h2 span{color:var(--gold2)}
+.final p{max-width:650px;margin:25px auto;color:rgba(255,255,255,.6);line-height:1.8}
+
+/* CONTACT */
+.contact{background:var(--cream)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.contact-card{background:#fff;border-radius:28px;padding:35px}
+.contact-card h3{font-family:"Cormorant Garamond",serif;font-size:38px;margin:0 0 22px}
+.contact-line{padding:15px 0;border-bottom:1px solid rgba(44,29,24,.09);font-size:13px;line-height:1.6}
+.contact-line strong{display:block;font-size:10px;text-transform:uppercase;letter-spacing:.15em;color:var(--gold3);margin-bottom:4px}
+.map-box{border-radius:28px;min-height:100%;background:linear-gradient(135deg,#3c2b24,#17110e);display:flex;align-items:center;justify-content:center;color:#fff;text-align:center;padding:40px}
+.map-box .pin{font-size:45px;color:var(--gold2)}
+
+/* FOOTER */
+footer{background:#080706;color:#fff;padding:55px 0 90px}
+.footer-grid{display:grid;grid-template-columns:1.3fr .7fr .8fr;gap:50px}
+footer p,footer a{color:rgba(255,255,255,.48);font-size:12px;line-height:1.8}
+footer h4{font-size:10px;text-transform:uppercase;letter-spacing:.2em;color:var(--gold2)}
+.copyright{border-top:1px solid rgba(255,255,255,.08);margin-top:40px;padding-top:20px;color:rgba(255,255,255,.3);font-size:10px}
+
+/* FLOATING */
+.floating-wa{position:fixed;right:20px;bottom:20px;width:58px;height:58px;border-radius:50%;background:#25d366;color:#fff;z-index:120;display:flex;align-items:center;justify-content:center;box-shadow:0 12px 35px rgba(0,0,0,.25);transition:.2s}
+.floating-wa:hover{transform:scale(1.08)}
+.mobile-cta{display:none}
+
+/* RESPONSIVE */
+@media(max-width:980px){
+nav{display:none}
+.menu{display:block}
+.mobile-nav.open{display:flex;position:absolute;top:78px;left:0;right:0;background:rgba(12,10,9,.98);padding:22px 20px;flex-direction:column;align-items:stretch;gap:16px}
+.mobile-nav.open a{padding:8px 0}
+.needs-grid,.services-grid{grid-template-columns:repeat(2,1fr)}
+.diff-grid{grid-template-columns:repeat(2,1fr)}
+.pair-layout,.process-grid,.contact-grid{grid-template-columns:1fr}
+.gallery-grid{grid-template-columns:1fr 1fr}
+.gallery-grid .wide{grid-column:span 2}
+}
+@media(max-width:680px){
+.container{width:min(100% - 28px,1180px)}
+section{padding:76px 0}
+.hero{min-height:730px;background-position:center}
+.hero h1{font-size:58px}
+.hero p{font-size:15px}
+.hero-actions .btn{width:100%}
+.needs-grid,.experience-grid,.services-grid,.test-grid,.diff-grid{grid-template-columns:1fr}
+.exp-card{min-height:470px}
+.exp-content h3{font-size:38px}
+.pair h2{font-size:60px}
+.pair-grid{grid-template-columns:1fr}
+.gallery-grid{grid-template-columns:1fr;grid-auto-rows:230px}
+.gallery-grid .wide{grid-column:auto}
+.gallery-grid .tall{grid-row:auto}
+.footer-grid{grid-template-columns:1fr;gap:25px}
+.mobile-cta{display:flex;position:fixed;bottom:0;left:0;right:0;background:rgba(12,10,9,.96);padding:10px;z-index:110}
+.mobile-cta a{width:100%;text-align:center;background:linear-gradient(135deg,var(--gold3),var(--gold2),var(--gold3));color:#17100c;padding:13px;border-radius:999px;font-size:11px;font-weight:800;letter-spacing:.12em}
+.floating-wa{bottom:72px}
+}
+
+.test-photo{width:100%;height:360px;object-fit:cover;border-radius:18px;margin-bottom:16px;display:block}.testimonials .test-grid{align-items:start}.testimonials .test{padding:14px;overflow:hidden}.testimonials .section-head p{display:none}
+
+/* CELEBRA MOMENTOS ESPECIALES — composición editorial premium */
+.special-moments{background:#17110f;color:#fff;padding:115px 0;overflow:hidden;position:relative}
+.special-moments:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 78% 30%,rgba(167,131,75,.12),transparent 38%),linear-gradient(90deg,rgba(255,255,255,.015),transparent 55%);pointer-events:none}
+.special-moments .container{position:relative;z-index:1}
+.special-editorial{display:grid;grid-template-columns:minmax(320px,.9fr) minmax(520px,1.25fr);gap:70px;align-items:center}
+.special-copy .label{color:#d7c28d;margin-bottom:18px}
+.special-copy h2{font-size:clamp(58px,6.2vw,96px);line-height:.84;font-weight:500;margin:0 0 28px;letter-spacing:-.03em}
+.special-copy h2 .gold-text{color:#d7c28d}
+.special-copy>p{max-width:520px;color:rgba(255,255,255,.66);font-size:14px;line-height:1.9;margin:0 0 18px}
+.special-copy .special-intro{font-size:16px;color:rgba(255,255,255,.84);margin-bottom:12px}
+.special-copy .btn{margin-top:18px}
+.special-options{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:34px;max-width:560px}
+.special-option{min-height:116px;border:1px solid rgba(215,194,141,.22);border-radius:20px;background:rgba(255,255,255,.035);padding:22px;display:flex;flex-direction:column;justify-content:center;transition:.25s ease}
+.special-option:hover{transform:translateY(-3px);border-color:rgba(215,194,141,.45);background:rgba(255,255,255,.055)}
+.special-option span{font-size:10px;letter-spacing:.2em;color:#d7c28d;margin-bottom:8px}
+.special-option h3{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:500;margin:0}
+.special-option p{font-size:11px;color:rgba(255,255,255,.52);line-height:1.5;margin:7px 0 0}
+.special-visual{min-width:0}
+.special-photo-grid{display:grid;grid-template-columns:1.05fr .75fr .75fr;grid-template-rows:220px 220px;gap:10px}
+.special-photo{overflow:hidden;border-radius:18px;background:#2a211d;position:relative}
+.special-photo img{width:100%;height:100%;display:block;object-fit:cover;transition:transform .6s ease}
+.special-photo:hover img{transform:scale(1.045)}
+.special-photo.main{grid-row:1 / 3}
+.special-photo.tall{grid-row:1 / 3}
+.special-photo-caption{position:absolute;left:15px;bottom:13px;padding:7px 11px;border-radius:999px;background:rgba(15,11,9,.72);backdrop-filter:blur(6px);font-size:9px;letter-spacing:.16em;color:#fff}
+.special-bottom{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}
+.special-mini{display:grid;grid-template-columns:125px 1fr;min-height:145px;border-radius:20px;overflow:hidden;background:#211915;border:1px solid rgba(215,194,141,.16)}
+.special-mini img{width:100%;height:100%;object-fit:cover;display:block}
+.special-mini-content{padding:19px}
+.special-mini-content .eyebrow{font-size:9px;letter-spacing:.18em;color:#d7c28d;margin-bottom:7px}
+.special-mini-content h3{font-family:'Cormorant Garamond',serif;font-size:29px;font-weight:500;margin:0 0 6px}
+.special-mini-content p{font-size:11px;line-height:1.55;color:rgba(255,255,255,.52);margin:0}
+@media(max-width:980px){.special-editorial{grid-template-columns:1fr;gap:48px}.special-copy{text-align:left}.special-copy>p{max-width:700px}.special-options{max-width:none}.special-photo-grid{grid-template-rows:240px 240px}}
+@media(max-width:680px){.special-moments{padding:78px 0}.special-copy h2{font-size:58px}.special-options{grid-template-columns:1fr}.special-photo-grid{grid-template-columns:1fr 1fr;grid-template-rows:230px 180px 180px}.special-photo.main{grid-row:1 / 3;grid-column:1}.special-photo.tall{grid-row:1 / 2;grid-column:2}.special-photo:nth-child(3){grid-column:1}.special-photo:nth-child(4){grid-column:2}.special-bottom{grid-template-columns:1fr}.special-mini{grid-template-columns:105px 1fr}.special-mini-content{padding:16px}.special-mini-content h3{font-size:26px}}
+
+</style>
+</head>
+
+<body>
+
+<header id="header">
+  <div class="container nav">
+    <a href="#inicio" class="brand">
+      <span class="brand-main">Wellnessamore</span>
+      <span class="brand-sub">Spa</span>
+    </a>
+
+    <nav>
+      <a href="#experiencias">Experiencias</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#parejas">Para dos</a>
+      <a href="#regalos">Regalos</a>
+      <a href="#faq">Preguntas</a>
+      <a href="#contacto" class="btn btn-gold btn-small">RESERVAR</a>
+    </nav>
+
+    <button id="menuBtn" class="menu">☰</button>
+  </div>
+
+  <div id="mobileNav" class="mobile-nav container">
+    <a href="#experiencias">Experiencias</a>
+    <a href="#servicios">Servicios</a>
+    <a href="#parejas">Para dos</a>
+    <a href="#regalos">Regalos</a>
+    <a href="#faq">Preguntas frecuentes</a>
+    <a href="#contacto" class="btn btn-gold">RESERVAR</a>
+  </div>
+</header>
+
+<main>
+
+<section id="inicio" class="hero">
+  <div class="container hero-inner">
+    <div class="hero-copy">
+      <div class="label">CENTRO DE BIENESTAR · MASOTERAPIA · ESTÉTICA</div>
+      <h1 class="serif">No es solo un masaje.<br><span>Es tu momento.</span></h1>
+      <p>Desconecta de la rutina, libera la tensión y regálate un espacio para sentirte cuidado.</p>
+      <p>Experiencias de bienestar para relajarte, cuidar tu piel, compartir con alguien especial o celebrar un momento que merece ser recordado.</p>
+      <div class="hero-actions">
+        <a href="#servicios" class="btn btn-gold">RESERVA TU EXPERIENCIA</a>
+        <a href="#experiencias" class="btn btn-outline">VER EXPERIENCIAS</a>
+      </div>
+      <div class="hero-note">Av. Nueva Providencia 2155 · Edificio Panorámico · Metro Los Leones</div>
+    </div>
+  </div>
+</section>
+
+<section class="needs">
+  <div class="container">
+    <div class="section-head">
+      <div class="label">ENCUENTRA TU MOMENTO</div>
+      <h2 class="serif">¿Qué necesitas hoy?</h2>
+      <p>Elige según lo que estás buscando. Así podrás encontrar más rápido la experiencia que mejor se adapta a ti.</p>
+    </div>
+
+    <div class="needs-grid">
+      <a class="need" href="#servicios">
+        <div class="need-icon">✦</div>
+        <h3>Quiero relajarme</h3>
+        <p>Cuando necesitas bajar el ritmo, descansar y desconectarte.</p>
+        <div class="need-link">VER MASAJES →</div>
+      </a>
+      <a class="need" href="#servicios">
+        <div class="need-icon">◌</div>
+        <h3>Necesito aliviar tensión</h3>
+        <p>Para esos días en que el cuerpo acumula cansancio y tensión.</p>
+        <div class="need-link">VER MASAJES →</div>
+      </a>
+      <a class="need" href="#servicios">
+        <div class="need-icon">✧</div>
+        <h3>Quiero cuidar mi piel</h3>
+        <p>Tratamientos faciales para limpiar, cuidar y renovar tu piel.</p>
+        <div class="need-link">VER FACIALES →</div>
+      </a>
+      <a class="need" href="#parejas">
+        <div class="need-icon">♡</div>
+        <h3>Quiero compartir</h3>
+        <p>Una experiencia para disfrutar junto a tu pareja o alguien especial.</p>
+        <div class="need-link">VER EXPERIENCIAS →</div>
+      </a>
+      <a class="need" href="#regalos">
+        <div class="need-icon">◇</div>
+        <h3>Quiero regalar</h3>
+        <p>Porque algunos regalos no se guardan. Se viven.</p>
+        <div class="need-link">REGALAR →</div>
+      </a>
+      <a class="need" href="#regalos">
+        <div class="need-icon">✦</div>
+        <h3>Quiero celebrar</h3>
+        <p>Cumpleaños, aniversarios y ocasiones especiales.</p>
+        <div class="need-link">CELEBRAR →</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="intro">
+  <div class="container">
+    <div class="label">WELLNESSAMORE SPA</div>
+    <p class="serif big">Tu bienestar también merece <span class="gold-text">un espacio en tu agenda.</span></p>
+    <p>Entre responsabilidades, trabajo, rutina y pendientes, muchas veces el autocuidado queda para después. En Wellnessamore puedes hacer una pausa, desconectar y dedicar un momento exclusivamente a tu bienestar.</p>
+  </div>
+</section>
+
+<section id="experiencias" class="dark-section">
+  <div class="container">
+    <div class="section-head">
+      <div class="label">EXPERIENCIAS WELLNESSAMORE</div>
+      <h2 class="serif">Momentos creados para <span class="gold-text">vivirse.</span></h2>
+      <p>Experiencias especiales para regalarte un momento, compartirlo o convertir una ocasión en un recuerdo.</p>
+    </div>
+
+    <div class="experience-grid">
+
+      <article class="exp-card">
+        <img src="assets/nuevas/masaje_exfoliacion.jpg" alt="Masaje con exfoliación y mascarilla">
+        <div class="exp-overlay"></div>
+        <div class="exp-content">
+          <div class="label">80 MIN · EXPERIENCIA</div>
+          <h3 class="serif">Masaje + exfoliación + mascarilla</h3>
+          <p>Un ritual pensado para compartir y renovar. Masaje a elección en cuerpo completo, exfoliación de espalda, piedras calientes, aromaterapia, mascarilla facial hidratante, tabla para picar y pisco sour.</p>
+          <div class="price-pills">
+            <div class="price-pill">1 persona <strong>$43.990</strong></div>
+            <div class="price-pill">2 personas <strong>$79.990</strong></div>
+          </div>
+          <a href="#" onclick="reserve('Masaje + exfoliación + mascarilla')" class="btn btn-gold">RESERVAR</a>
+        </div>
+      </article>
+
+      <article class="exp-card">
+        <img src="assets/nuevas/masaje_mascarilla.jpg" alt="Masaje y mascarilla facial">
+        <div class="exp-overlay"></div>
+        <div class="exp-content">
+          <div class="label">70 MIN · EXPERIENCIA</div>
+          <h3 class="serif">Masaje + mascarilla</h3>
+          <p>Masaje a elección en cuerpo completo, piedras calientes, tabla para picar y pisco sour, acompañado de una mascarilla facial para cerrar la experiencia con relajación.</p>
+          <div class="price-pills">
+            <div class="price-pill">1 persona <strong>$39.990</strong></div>
+            <div class="price-pill">2 personas <strong>$69.990</strong></div>
+          </div>
+          <a href="#" onclick="reserve('Masaje + mascarilla')" class="btn btn-gold">RESERVAR</a>
+        </div>
+      </article>
+
+      <article class="exp-card">
+        <img src="assets/nuevas/chocolaterapia.jpg" alt="Experiencia de chocolaterapia">
+        <div class="exp-overlay"></div>
+        <div class="exp-content">
+          <div class="label">75 MIN · EXPERIENCIA</div>
+          <h3 class="serif">Chocolaterapia</h3>
+          <p>Una experiencia sensorial para compartir y reconectar. Masaje en cuerpo completo acompañado de chocolaterapia y piedras calientes, complementado con aromaterapia, tabla para picar y pisco sour.</p>
+          <div class="price-pills">
+            <div class="price-pill">1 persona <strong>$39.990</strong></div>
+            <div class="price-pill">2 personas <strong>$69.990</strong></div>
+          </div>
+          <a href="#" onclick="reserve('Chocolaterapia')" class="btn btn-gold">RESERVAR</a>
+        </div>
+      </article>
+
+      <article class="exp-card">
+        <img src="assets/nuevas/personalizado_premium.jpg" alt="Experiencia personalizada premium">
+        <div class="exp-overlay"></div>
+        <div class="exp-content">
+          <div class="label">75 MIN · EXPERIENCIA</div>
+          <h3 class="serif">Personalizado Premium</h3>
+          <p>Tratamiento integral adaptado a las necesidades de cada persona. Combina masaje relajante y/o descontracturante, piedras calientes, ventosas y electroestimulación TENS según evaluación.</p>
+          <div class="price-pills">
+            <div class="price-pill">1 persona <strong>$39.990</strong></div>
+            <div class="price-pill">2 personas <strong>$74.990</strong></div>
+          </div>
+          <a href="#" onclick="reserve('Personalizado Premium')" class="btn btn-gold">RESERVAR</a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section id="servicios">
+  <div class="container">
+    <div class="section-head">
+      <div class="label">CATÁLOGO</div>
+      <h2 class="serif">Masajes y cuidado facial</h2>
+      <p>Elige la duración y el tipo de experiencia que buscas. Todos los valores mostrados corresponden al catálogo compartido.</p>
+    </div>
+
+    <div class="filters">
+      <button class="filter active" data-filter="all">TODOS</button>
+      <button class="filter" data-filter="masaje">MASAJES</button>
+      <button class="filter" data-filter="facial">FACIALES</button>
+      <button class="filter" data-filter="express">EXPRESS</button>
+    </div>
+
+    <div id="servicesGrid" class="services-grid"></div>
+  </div>
+</section>
+
+<section id="parejas" class="pair">
+  <div class="container pair-layout">
+    <div>
+      <div class="label">EXPERIENCIAS PARA DOS</div>
+      <h2 class="serif">Un momento para <span class="gold-text">volver a conectar.</span></h2>
+      <p>Hay días para hacer cosas y hay momentos para simplemente estar juntos. Wellnessamore ofrece experiencias para compartir, relajarse y disfrutar una pausa diferente.</p>
+      <p>Ideales para parejas, aniversarios, celebraciones o simplemente para regalarse un momento juntos.</p>
+      <a href="#" onclick="reserve('Experiencia para dos')" class="btn btn-gold">CONSULTAR EXPERIENCIAS PARA DOS</a>
+    </div>
+
+    <div class="pair-grid">
+      <div class="pair-box"><span>♡</span><h3>Una cita diferente</h3></div>
+      <div class="pair-box"><span>✦</span><h3>Un aniversario</h3></div>
+      <div class="pair-box"><span>✧</span><h3>Una sorpresa</h3></div>
+      <div class="pair-box"><span>∞</span><h3>Simplemente porque sí</h3></div>
+    </div>
+  </div>
+</section>
+
+
+
+<section id="momentos-especiales" class="special-moments">
+  <div class="container">
+    <div class="special-editorial">
+      <div class="special-copy">
+        <div class="label">CELEBRA · CONECTA · COMPARTE</div>
+        <h2 class="serif">Momentos para <span class="gold-text">recordar.</span></h2>
+        <p class="special-intro">Hay días para hacer cosas y hay momentos para simplemente estar juntos.</p>
+        <p>En Wellnessamore creamos experiencias para celebrar un aniversario, sorprender en un cumpleaños o regalar un momento que merezca ser recordado.</p>
+        <p>Porque no se trata solamente de regalar un servicio. Se trata de crear un momento que se sienta especial.</p>
+        <a href="#" onclick="reserve('Experiencias para aniversarios y celebraciones'); return false;" class="btn btn-gold">CONSULTAR EXPERIENCIAS</a>
+
+        <div class="special-options">
+          <div class="special-option">
+            <span>PARA DOS</span>
+            <h3>Un aniversario</h3>
+            <p>Una pausa para celebrar el amor y volver a conectar.</p>
+          </div>
+          <div class="special-option">
+            <span>PARA SORPRENDER</span>
+            <h3>Un cumpleaños</h3>
+            <p>Haz que su día sea aún más especial con una experiencia.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="special-visual">
+        <div class="special-photo-grid">
+          <div class="special-photo main">
+            <img src="assets/nuevas/aniversario_01.jpg" alt="Experiencia de aniversario Wellnessamore" loading="lazy">
+            <span class="special-photo-caption">ANIVERSARIO</span>
+          </div>
+          <div class="special-photo">
+            <img src="assets/nuevas/aniversario_02.jpg" alt="Celebración de aniversario Wellnessamore" loading="lazy">
+          </div>
+          <div class="special-photo tall">
+            <img src="assets/nuevas/aniversario_03.jpg" alt="Experiencia para pareja Wellnessamore" loading="lazy">
+          </div>
+          <div class="special-photo">
+            <img src="assets/nuevas/aniversario_04.jpg" alt="Celebración romántica Wellnessamore" loading="lazy">
+          </div>
+        </div>
+
+        <div class="special-bottom">
+          <div class="special-mini">
+            <img src="assets/nuevas/cumpleanos_01.jpg" alt="Cumpleaños en Wellnessamore" loading="lazy">
+            <div class="special-mini-content">
+              <div class="eyebrow">CELEBRACIÓN</div>
+              <h3>Cumpleaños</h3>
+              <p>Una forma diferente de sorprender y celebrar a alguien especial.</p>
+            </div>
+          </div>
+          <div class="special-mini">
+            <img src="assets/nuevas/gift_card_01.jpg" alt="Gift Card Wellnessamore" loading="lazy">
+            <div class="special-mini-content">
+              <div class="eyebrow">REGALO</div>
+              <h3>Gift Card</h3>
+              <p>Regala bienestar y deja que esa persona elija su momento.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="regalos" class="gift">
+  <div class="container">
+    <div class="label">REGALA · CELEBRA · COMPARTE</div>
+    <h2 class="serif">Hay regalos que se entregan.<br><span class="gold-text">Otros se viven.</span></h2>
+    <p>Cuando no quieres regalar algo más para guardar en un cajón, regala un momento de bienestar.</p>
+    <div class="occasions">
+      <span class="filter">CUMPLEAÑOS</span>
+      <span class="filter">ANIVERSARIOS</span>
+      <span class="filter">PAREJAS</span>
+      <span class="filter">AMIGAS</span>
+      <span class="filter">FAMILIA</span>
+    </div>
+    <a href="#" onclick="reserve('Regalo / experiencia especial')" class="btn btn-dark">QUIERO REGALAR UNA EXPERIENCIA</a>
+    <p style="font-size:12px">¿No sabes cuál elegir? Escríbenos y te ayudamos a encontrar una opción.</p>
+  </div>
+</section>
+
+<section class="diff">
+  <div class="container">
+    <div class="section-head center">
+      <div class="label">POR QUÉ WELLNESSAMORE</div>
+      <h2 class="serif">No es solo el procedimiento. <span class="gold-text">Es el momento.</span></h2>
+    </div>
+    <div class="diff-grid">
+      <div class="diff-card"><div class="diff-num">01</div><h3>Bienestar</h3><p>Una propuesta que combina masoterapia, estética y experiencias.</p></div>
+      <div class="diff-card"><div class="diff-num">02</div><h3>Experiencia</h3><p>El foco está en que el momento completo se sienta especial.</p></div>
+      <div class="diff-card"><div class="diff-num">03</div><h3>Calidez</h3><p>Un espacio pensado para que puedas desconectar de la rutina.</p></div>
+      <div class="diff-card"><div class="diff-num">04</div><h3>Conexión</h3><p>Momentos de bienestar que también pueden vivirse acompañado.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="process">
+  <div class="container process-grid">
+    <div>
+      <div class="section-head">
+        <div class="label">TU EXPERIENCIA</div>
+        <h2 class="serif">Tu experiencia comienza antes de la sesión.</h2>
+        <p>Queremos que desde que eliges tu experiencia hasta que termina tu visita sientas que ese tiempo fue realmente para ti.</p>
+      </div>
+    </div>
+    <div class="steps">
+      <div class="step"><div class="step-number">01</div><div><h3>Elige</h3><p>Encuentra la experiencia que mejor se adapta a lo que necesitas.</p></div></div>
+      <div class="step"><div class="step-number">02</div><div><h3>Reserva</h3><p>Escríbenos directamente por WhatsApp y consulta disponibilidad.</p></div></div>
+      <div class="step"><div class="step-number">03</div><div><h3>Desconecta</h3><p>Llega, deja afuera la rutina y permítete disfrutar el momento.</p></div></div>
+      <div class="step"><div class="step-number">04</div><div><h3>Disfruta</h3><p>Regálate una pausa dedicada a tu bienestar.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="testimonials">
+  <div class="container">
+    <div class="section-head center">
+      <div class="label">PRUEBA SOCIAL</div>
+      <h2 class="serif">Ellos ya vivieron la experiencia.</h2>
+      <p>Opiniones reales de personas que ya nos visitaron.</p>
+    </div>
+    <div class="test-grid">
+      <div class="test"><div class="stars">★★★★★</div><blockquote>“Realmente maravillosa!!! Quedé súper encantada con la atención y los masajes, súper recomendado ❤️❤️❤️”</blockquote><small>TESTIMONIO REAL</small></div>
+      <div class="test"><div class="stars">★★★★★</div><blockquote>“Excelente servicio, completo! El masaje realmente dura una hora y es muy bueno. Recomendado totalmente 💯 ⭐⭐⭐⭐⭐”</blockquote><small>TESTIMONIO REAL</small></div>
+      <div class="test"><div class="stars">★★★★★</div><blockquote>“Fui una tarde maravillosa muchas gracias 100% recomendado y un lindo regalo de cumpleaños que me hizo mi hermana ❤️”</blockquote><small>TESTIMONIO REAL</small></div>
+    </div>
+  </div>
+</section>
+
+<section class="gallery">
+  <div class="container">
+    <div class="section-head">
+      <div class="label">WELLNESSAMORE</div>
+      <h2 class="serif">Un espacio para bajar el ritmo.</h2>
+      <p>Conoce parte de las experiencias y el ambiente que hacen de Wellnessamore un espacio para desconectar y disfrutar.</p>
+    </div>
+    <div class="gallery-grid">
+      <img class="tall" src="assets/nuevas/masaje_exfoliacion.jpg" alt="Experiencia Wellnessamore">
+      <img src="assets/nuevas/masaje_exfoliacion.jpg" alt="Catálogo de masajes Wellnessamore">
+      <img src="assets/facial_basica.jpg" alt="Limpieza facial Wellnessamore">
+      <img class="wide" src="assets/nuevas/chocolaterapia.jpg" alt="Chocolaterapia Wellnessamore">
+    </div>
+  </div>
+</section>
+
+<section id="faq" class="faq">
+  <div class="container">
+    <div class="section-head center">
+      <div class="label">PREGUNTAS FRECUENTES</div>
+      <h2 class="serif">Antes de reservar</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item"><button class="faq-button"><span class="faq-question">¿Cómo puedo reservar?</span><span class="faq-icon">+</span></button><div class="faq-answer">Puedes reservar directamente por WhatsApp. Indica la experiencia o servicio que te interesa y te ayudaremos con la disponibilidad.</div></div>
+      <div class="faq-item"><button class="faq-button"><span class="faq-question">¿Puedo reservar para dos personas?</span><span class="faq-icon">+</span></button><div class="faq-answer">Sí. Varias de las experiencias del catálogo tienen valores específicos para dos personas. Puedes consultar directamente por WhatsApp.</div></div>
+      <div class="faq-item"><button class="faq-button"><span class="faq-question">¿Puedo regalar una experiencia?</span><span class="faq-icon">+</span></button><div class="faq-answer">Sí. Puedes escribirnos para consultar las opciones disponibles para regalar.</div></div>
+      <div class="faq-item"><button class="faq-button"><span class="faq-question">¿Dónde está Wellnessamore Spa?</span><span class="faq-icon">+</span></button><div class="faq-answer">Av. Nueva Providencia 2155, Edificio Panorámico, Metro Los Leones, Santiago de Chile.</div></div>
+      <div class="faq-item"><button class="faq-button"><span class="faq-question">¿Cuál es el horario?</span><span class="faq-icon">+</span></button><div class="faq-answer">Lunes a sábado de 10:00 a 19:00 hrs. Domingo de 11:00 a 17:00 hrs.</div></div>
+      <div class="faq-item"><button class="faq-button"><span class="faq-question">¿Qué experiencia debería elegir?</span><span class="faq-icon">+</span></button><div class="faq-answer">Puedes elegir según tu objetivo: relajación, descarga muscular, cuidado facial, una experiencia para dos o un regalo. Si tienes dudas, escríbenos y te orientaremos.</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="contacto" class="contact">
+  <div class="container">
+    <div class="section-head">
+      <div class="label">RESERVA</div>
+      <h2 class="serif">Tu próximo momento de bienestar comienza aquí.</h2>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <h3 class="serif">Wellnessamore Spa</h3>
+        <div class="contact-line"><strong>Dirección</strong>Av. Nueva Providencia 2155, Edificio Panorámico, Metro Los Leones, Santiago de Chile.</div>
+        <div class="contact-line"><strong>Horario</strong>Lunes a sábado: 10:00 a 19:00 hrs.<br>Domingo: 11:00 a 17:00 hrs.</div>
+        <div class="contact-line"><strong>WhatsApp</strong><a id="contactWhatsapp" href="#">+56 9 9754 1947</a></div>
+        <div style="margin-top:25px"><a href="#" onclick="reserve('Reserva general')" class="btn btn-dark">RESERVA TU EXPERIENCIA</a></div>
+      </div>
+      <div class="map-box">
+        <div>
+          <div class="pin">⌖</div>
+          <div class="label">METRO LOS LEONES</div>
+          <h3 class="serif" style="font-size:40px;margin:10px 0">Av. Nueva Providencia 2155</h3>
+          <p style="color:rgba(255,255,255,.6);font-size:12px;line-height:1.7">Edificio Panorámico · Santiago de Chile</p>
+          <a target="_blank" rel="noopener" class="btn btn-light" href="https://www.google.com/maps/search/?api=1&query=Av.+Nueva+Providencia+2155,+Santiago,+Chile">VER UBICACIÓN EN MAPS</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="final">
+  <div class="container">
+    <div class="label">TU PRÓXIMO MOMENTO</div>
+    <h2 class="serif">Quizás esto era<br><span>justo lo que necesitabas.</span></h2>
+    <p>Una pausa. Un momento para ti. Una experiencia para compartir. O simplemente una forma diferente de decir: “Hoy también me quiero cuidar.”</p>
+    <a href="#" onclick="reserve('Reserva general')" class="btn btn-gold">RESERVA TU EXPERIENCIA</a>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="brand"><span class="brand-main">Wellnessamore</span><span class="brand-sub">Spa</span></div>
+        <p>Centro de bienestar, masoterapia y estética. Experiencias creadas para desconectar, cuidarte y compartir momentos especiales.</p>
+      </div>
+      <div>
+        <h4>Navegación</h4>
+        <p><a href="#experiencias">Experiencias</a><br><a href="#servicios">Servicios</a><br><a href="#parejas">Para dos</a><br><a href="#regalos">Regalos</a><br><a href="#faq">Preguntas frecuentes</a></p>
+      </div>
+      <div>
+        <h4>Contacto</h4>
+        <p>Av. Nueva Providencia 2155<br>Edificio Panorámico<br>Metro Los Leones<br><br>+56 9 9754 1947</p>
+        <a href="https://www.instagram.com/wellness.amorespa/" target="_blank" rel="noopener noreferrer" class="btn btn-gold btn-small" style="margin-top:10px;">Instagram @wellness.amorespa</a>
+      </div>
+    </div>
+    <div class="copyright">© <span id="year"></span> Wellnessamore Spa · Masoterapia · Estética · Bienestar</div>
+  </div>
+</footer>
+
+<a id="floatingWhatsapp" class="floating-wa" href="#" aria-label="Reservar por WhatsApp" title="Reservar por WhatsApp">
+<svg width="27" height="27" viewBox="0 0 24 24" fill="currentColor"><path d="M20.52 3.48A11.82 11.82 0 0 0 12.08 0C5.56 0 .25 5.31.25 11.83c0 2.08.54 4.11 1.57 5.9L.16 24l6.42-1.68a11.8 11.8 0 0 0 5.5 1.4h.01c6.52 0 11.83-5.31 11.83-11.83 0-3.16-1.23-6.13-3.4-8.41ZM12.09 21.7a9.84 9.84 0 0 1-5.02-1.37l-.36-.21-3.81 1 1.02-3.71-.23-.38a9.83 9.83 0 1 1 8.4 4.67Zm5.4-7.37c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.27-.47-2.42-1.5-.9-.8-1.51-1.78-1.69-2.08-.18-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.49s1.07 2.89 1.22 3.09c.15.2 2.1 3.2 5.09 4.49.71.31 1.27.49 1.7.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.42.25-.7.25-1.3.17-1.42-.08-.12-.27-.2-.57-.35Z"/></svg>
+</a>
+
+<div class="mobile-cta"><a id="mobileWhatsapp" href="#">RESERVA TU EXPERIENCIA</a></div>
+
+<script>
+const WA="56997541947";
+const defaultMessage="Hola, quiero reservar una experiencia en Wellnessamore Spa. Me gustaría conocer las opciones disponibles.";
+function wa(message){return "https://wa.me/"+WA+"?text="+encodeURIComponent(message);}
+function reserve(service){
+  const msg=`Hola, quiero reservar una experiencia en Wellnessamore Spa. Me interesa: ${service}. ¿Me pueden ayudar con la disponibilidad?`;
+  window.open(wa(msg),"_blank");
+  return false;
+}
+document.getElementById("floatingWhatsapp").href=wa(defaultMessage);
+document.getElementById("mobileWhatsapp").href=wa(defaultMessage);
+document.getElementById("contactWhatsapp").href=wa(defaultMessage);
+
+const services=[
+{cat:"masaje",tag:"MASAJE · 45 MIN",name:"Drenaje linfático",duration:"45 min · se pueden elegir 2 zonas",desc:"Masaje suave y específico que favorece la eliminación de líquidos retenidos, mejora la circulación y aporta una sensación de ligereza y descanso.",img:"assets/nuevas/drenaje_linfatico.jpg",p1:"$31.990"},
+{cat:"masaje",tag:"MASAJE · 60 MIN",name:"Masaje prenatal",duration:"60 min",desc:"Nos adaptamos a tu etapa del embarazo, ajustando presión, técnicas y posiciones para aliviar tensiones y brindar un descanso profundo en un ambiente cálido.",img:"assets/nuevas/prenatal.jpg",p1:"$34.990"},
+{cat:"express",tag:"MASAJE EXPRESS · 30 MIN",name:"Relajación express",duration:"30 min",desc:"Masaje enfocado exclusivamente en la espalda, ayudando a aliviar la tensión muscular, disminuir el estrés y brindar una sensación de bienestar y relajación.",img:"assets/nuevas/relax_express_nueva.jpg",p1:"$14.990"},
+{cat:"express",tag:"MASAJE EXPRESS · 30 MIN",name:"Descontracturante express",duration:"30 min",desc:"Ideal para trabajar rápidamente zonas específicas como cuello, hombros y espalda mediante técnicas profundas.",img:"assets/nuevas/descontracturante_express_nueva.jpg",p1:"$17.990"},
+{cat:"masaje",tag:"MASAJE · 60 MIN",name:"Relajación",duration:"60 min",desc:"Terapia enfocada en disminuir el estrés, aliviar la tensión y brindar una profunda sensación de bienestar mediante movimientos suaves y envolventes.",img:"assets/nuevas/relajacion.jpg",p1:"$24.990",p2:"$49.990",l1:"1 persona",l2:"2 personas"},
+{cat:"masaje",tag:"MASAJE · 60 MIN",name:"Descontracturante",duration:"60 min",desc:"Ideal para aliviar contracturas, reducir dolores musculares y liberar la tensión acumulada, mejorando la movilidad y recuperación del cuerpo.",img:"assets/nuevas/descontracturante.jpg",p1:"$29.990",p2:"$56.990",l1:"1 persona",l2:"2 personas"},
+{cat:"masaje",tag:"MASAJE · 60 MIN",name:"Piedras calientes",duration:"60 min",desc:"Combina el masaje con piedras volcánicas calientes que ayudan a relajar profundamente la musculatura, aliviar tensiones y favorecer la circulación.",img:"assets/nuevas/piedras_calientes.jpg",p1:"$34.990",p2:"$64.990",l1:"1 persona",l2:"2 personas"},
+{cat:"masaje",tag:"MASAJE · 60 MIN",name:"Ventosas",duration:"60 min",desc:"Técnica que utiliza ventosas para estimular la circulación, liberar tensión muscular, disminuir contracturas y favorecer la recuperación de los tejidos.",img:"assets/nuevas/ventosas.jpg",p1:"$34.990",p2:"$64.990",l1:"1 persona",l2:"2 personas"},
+{cat:"facial",tag:"LIMPIEZA FACIAL",name:"Limpieza facial básica",duration:"20 min",desc:"Tratamiento rápido diseñado para limpiar, refrescar y revitalizar la piel en poco tiempo.",img:"assets/nuevas/facial_basica_nueva.jpg",includes:"Limpieza de rostro, exfoliación, mascarilla acorde a tu tipo de piel, crema hidratante y protector solar.",p1:"$14.990"},
+{cat:"facial",tag:"LIMPIEZA FACIAL",name:"Limpieza profunda",duration:"60–70 min",desc:"Limpieza y exfoliación con vapor ozono y aparatología de hidrafacial según el tipo de piel.",img:"assets/nuevas/facial_profunda_nueva.jpg",includes:"Hidrodermoabrasión, paleta ultrasónica y otras funciones según necesidad, alta frecuencia, mascarilla acorde al tipo de piel, máscara LED, hidratación y protección.",p1:"$29.990"},
+{cat:"facial",tag:"LIMPIEZA FACIAL",name:"Limpieza más lifting",duration:"70 min",desc:"Limpieza facial con exfoliación, vapor ozono y aparatología según tipo de piel, complementada con técnicas y productos orientados al cuidado facial.",img:"assets/nuevas/facial_lifting_nueva.jpg",includes:"Hidradermoabrasión, paleta ultrasónica y otras funciones si es necesario, alta frecuencia, radiofrecuencia, mascarilla acorde al tipo de piel, máscara LED, hidratación y protección.",p1:"$39.990"}
+];
+
+const grid=document.getElementById("servicesGrid");
+function render(filter="all"){
+  grid.innerHTML="";
+  services.filter(s=>filter==="all"||s.cat===filter).forEach(s=>{
+    const price2=s.p2?`<div class="price"><span>${s.l2}</span><b>${s.p2}</b></div>`:"";
+    const inc=s.includes?`<div class="includes"><strong>Qué incluye:</strong><br>${s.includes}</div>`:"";
+    grid.insertAdjacentHTML("beforeend",`
+      <article class="service">
+        <div class="service-image"><img src="${s.img}" alt="${s.name}"></div>
+        <div class="service-body">
+          <div class="service-tag">${s.tag}</div>
+          <h3>${s.name}</h3>
+          <div class="duration">${s.duration}</div>
+          <p>${s.desc}</p>
+          ${inc}
+          <div class="prices">
+            <div class="price"><span>${s.l1||"1 persona"}</span><b>${s.p1}</b></div>
+            ${price2}
+          </div>
+          <a href="#" class="btn btn-dark" onclick="reserve('${s.name.replace(/'/g,"\\'")}');return false;">RESERVAR</a>
+        </div>
+      </article>
+    `);
+  });
+}
+render();
+
+document.querySelectorAll(".filter[data-filter]").forEach(btn=>{
+  btn.addEventListener("click",()=>{
+    document.querySelectorAll(".filter[data-filter]").forEach(x=>x.classList.remove("active"));
+    btn.classList.add("active");
+    render(btn.dataset.filter);
+  });
+});
+
+document.querySelectorAll(".faq-button").forEach(btn=>{
+  btn.addEventListener("click",()=>{
+    const item=btn.parentElement;
+    document.querySelectorAll(".faq-item").forEach(x=>{if(x!==item)x.classList.remove("active")});
+    item.classList.toggle("active");
+  });
+});
+
+const header=document.getElementById("header");
+window.addEventListener("scroll",()=>{
+  header.classList.toggle("scrolled",window.scrollY>30);
+});
+
+const menuBtn=document.getElementById("menuBtn");
+const mobileNav=document.getElementById("mobileNav");
+menuBtn.addEventListener("click",()=>mobileNav.classList.toggle("open"));
+mobileNav.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>mobileNav.classList.remove("open")));
+
+document.getElementById("year").textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
