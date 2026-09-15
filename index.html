@@ -231,10 +231,45 @@ nav{display:none}
 @media(max-width:680px){
 .container{width:min(100% - 28px,1180px)}
 section{padding:76px 0}
-.hero{min-height:730px;background-position:center}
+
+/* PORTADA MÓVIL: la imagen suministrada ya contiene el diseño completo. */
+.hero{
+  min-height:calc(100vw * 1.776833);
+  height:calc(100vw * 1.776833);
+  align-items:stretch;
+  background:url("assets/nuevas/portada-mobile.png.png") center top / 100% 100% no-repeat;
+}
+.hero-inner{width:100%;height:100%;padding:0}
+.hero-copy{width:100%;max-width:none;height:100%;position:relative}
+.hero-copy>.label,
+.hero-copy>h1,
+.hero-copy>p,
+.hero-copy>.hero-note{display:none}
+.hero-actions{
+  position:absolute;
+  left:8.5%;
+  right:8.5%;
+  bottom:4.3%;
+  height:13.2%;
+  margin:0;
+  display:flex;
+  flex-direction:column;
+  gap:7%;
+  z-index:3;
+}
+.hero-actions .btn{
+  width:100%;
+  height:46%;
+  padding:0;
+  opacity:0;
+  background:transparent;
+  border:0;
+  box-shadow:none;
+  color:transparent;
+}
+
 .hero h1{font-size:58px}
 .hero p{font-size:15px}
-.hero-actions .btn{width:100%}
 .needs-grid,.experience-grid,.services-grid,.test-grid,.diff-grid{grid-template-columns:1fr}
 .exp-card{min-height:470px}
 .exp-content h3{font-size:38px}
@@ -289,23 +324,6 @@ section{padding:76px 0}
 
 /* AJUSTES EXCLUSIVOS PARA CELULAR — no modifica escritorio */
 @media (max-width:680px){
-  /* Portada vertical exclusiva para móvil */
-  .hero{
-    min-height:760px;
-    align-items:flex-end;
-    background:
-      linear-gradient(180deg,rgba(10,8,7,.08) 0%,rgba(10,8,7,.12) 38%,rgba(10,8,7,.88) 100%),
-      url("assets/nuevas/portada-mobile.png.png") center center / cover no-repeat;
-  }
-  .hero-inner{
-    width:min(100% - 28px,1180px);
-    padding-top:110px;
-    padding-bottom:38px;
-  }
-  .hero-copy{
-    max-width:100%;
-  }
-
   /* Galería de aniversarios: una imagen por fila para evitar superposición */
   .special-photo-grid{
     grid-template-columns:1fr;
